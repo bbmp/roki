@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.robam.roki.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.robam.roki.ui.home.ui.login.LoginFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fullscreen"
+            app:destination="@id/fullscreenFragment"/>
+        <action
+            android:id="@+id/action_dashboard"
+            app:destination="@id/dashFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.robam.roki.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/fullscreenFragment"
+        android:name="com.robam.roki.ui.home.FullscreenFragment"
+        tools:layout="@layout/fragment_fullscreen">
+        <action
+            android:id="@+id/action_login"
+            app:popUpTo="@id/navigation_login"/>
+    </fragment>
+    <fragment
+        android:id="@+id/dashFragment"
+        android:name="com.robam.roki.ui.dashboard.DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+        <action android:id="@+id/action_login"
+            app:popUpTo="@id/navigation_login"/>
+    </fragment>
+</navigation>
