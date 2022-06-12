@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -21,6 +22,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.jaeger.library.StatusBarUtil;
 import com.robam.roki.R;
 import com.robam.roki.ui.adapter.InventoryAdapter;
@@ -77,16 +79,11 @@ public class HomeFragment extends Fragment {
 //        StatusBarUtil.setTransparent(getActivity());
 
         final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         final SwipeRecyclerView recyclerView = root.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         final List data = new ArrayList();
-        for (int i = 'A'; i < 'Z'; i++) {
+        for (int i = 1; i < 100; i++) {
             data.add(i+"KKKKK");
         }
         final InventoryAdapter adapter = new InventoryAdapter(getContext(), data);
@@ -106,7 +103,7 @@ public class HomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        StatusBarUtil.setColorNoTranslucent(getActivity(), getResources().getColor(R.color.colorPrimary));
+//        StatusBarUtil.setColorNoTranslucent(getActivity(), getResources().getColor(R.color.colorPrimary));
 
 //        if (getActivity() != null && getActivity().getWindow() != null) {
 //            getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);

@@ -67,6 +67,7 @@ public class NotificationsFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
         imageView = root.findViewById(R.id.imageView);
         AppBarLayout appBarLayout = root.findViewById(R.id.appbar);
+
         final Toolbar toolbar = root.findViewById(R.id.toolbar);
         final List data = new ArrayList();
         for (int i = 'A'; i < 'Z'; i++) {
@@ -93,9 +94,11 @@ public class NotificationsFragment extends Fragment {
                 Log.e("getTotalScrollRange", "range=" + appBarLayout.getTotalScrollRange());
                 float percent = (float) Math.abs(i) / appBarLayout.getTotalScrollRange();
                 Log.e("onOffsetChanged", "percent=" + percent);
-
-//                StatusBarUtil.setColor(getActivity(), Color.WHITE, (int) (255*(1-percent)));
-                toolbar.setBackgroundColor(Color.argb((int) (255*percent), 0xFF, 0xFF, 0xFF));
+//                appBarLayout.setFitsSystemWindows(true);
+                if (percent>=1) {
+                    StatusBarUtil.setColor(getActivity(), Color.WHITE);
+                    toolbar.setBackgroundColor(Color.rgb(0xFF, 0xFF, 0xFF));
+                }
             }
         });
         return root;
@@ -104,7 +107,7 @@ public class NotificationsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        StatusBarUtil.setTranslucentForImageView(getActivity(), 0, imageView);
+//        StatusBarUtil.setTranslucentForImageView(getActivity(), 0, imageView);
 //        StatusBarUtil.setColorNoTranslucent(getActivity(), Color.BLACK);
     }
 

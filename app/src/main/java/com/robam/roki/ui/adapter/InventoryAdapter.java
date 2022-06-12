@@ -2,8 +2,14 @@ package com.robam.roki.ui.adapter;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
 import com.robam.roki.R;
 
 import java.util.List;
@@ -11,9 +17,11 @@ import java.util.List;
 public class InventoryAdapter extends BaseRecyclerViewAdapter<String> {
 
     private OnDeleteClickLister mDeleteClickListener;
+    private Context mContext;
 
     public InventoryAdapter(Context context, List<String> data) {
         super(context, data, R.layout.item_inventory);
+        mContext = context;
     }
 
     @Override
@@ -37,6 +45,10 @@ public class InventoryAdapter extends BaseRecyclerViewAdapter<String> {
         ((TextView) holder.getView(R.id.tv_detail)).setText(detail);
         String volume = bean + "方";
         ((TextView) holder.getView(R.id.tv_volume)).setText(volume);
+         ImageView imageView = (ImageView) holder.getView(R.id.imageView);
+
+        Glide.with(mContext).load(R.mipmap.wet).override(100, 100)
+                .into(imageView);
     }
 
     public void setOnDeleteClickListener(OnDeleteClickLister listener) {

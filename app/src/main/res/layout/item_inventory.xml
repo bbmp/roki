@@ -14,6 +14,12 @@
         android:paddingStart="16dp"
         android:paddingTop="12dp">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/avatar_4"/>
         <TextView
             android:id="@+id/tv_quantity"
             android:layout_width="wrap_content"

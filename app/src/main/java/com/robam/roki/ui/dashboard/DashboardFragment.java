@@ -1,5 +1,6 @@
 package com.robam.roki.ui.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.robam.roki.R;
+import com.robam.roki.ui.ImageActivity;
 
 public class DashboardFragment extends Fragment {
 
@@ -35,8 +37,11 @@ public class DashboardFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavController navController = Navigation.findNavController(view);
-                navController.popBackStack();
+//                NavController navController = Navigation.findNavController(view);
+//                navController.popBackStack();
+                Intent intent = new Intent();
+                intent.setClass(getContext(), ImageActivity.class);
+                startActivity(intent);
             }
         });
         return root;

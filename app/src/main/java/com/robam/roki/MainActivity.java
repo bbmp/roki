@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.robam.roki.utils.ImageUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     navView.setVisibility(View.GONE);
             }
         });
+
     }
 
     private void setstatusTransparent() {

@@ -3,11 +3,12 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:fitsSystemWindows="false"
         android:layout_height="250dp">
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -19,7 +20,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/imageview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@mipmap/ic_launcher"/>
+                android:background="#FFFF00"/>
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"

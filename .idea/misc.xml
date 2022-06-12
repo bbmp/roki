@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/drawable/avatar_4.xml" value="0.1" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout-w1240dp/content_home.xml" value="0.1" />
+        <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/activity_image.xml" value="0.1" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/activity_main.xml" value="0.1015625" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/content_home.xml" value="0.1421875" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/fragment_dashboard.xml" value="0.134375" />
@@ -11,6 +13,7 @@
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/item_inventory.xml" value="0.1" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/item_msg_remind.xml" value="0.1" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/layout/item_revenory.xml" value="0.1" />
         <entry key="..\:/Users/roy/AndroidStudioProjects/Roki/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
