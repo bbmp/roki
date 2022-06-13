@@ -3,6 +3,7 @@ package com.robam.roki;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -15,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 //        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
 //                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
 //                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
@@ -47,7 +49,17 @@ public class MainActivity extends AppCompatActivity {
                     navView.setVisibility(View.GONE);
             }
         });
-
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                NavOptions options = new NavOptions.Builder()
+                        .setPopUpTo(navController.getCurrentDestination().getId(), true)
+                        .setLaunchSingleTop(true)
+                        .build();
+                navController.navigate(menuItem.getItemId(), null, options);
+                return true;
+            }
+        });
     }
 
     private void setstatusTransparent() {
